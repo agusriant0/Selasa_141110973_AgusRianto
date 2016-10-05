@@ -1,0 +1,9 @@
+D:\Sem 5 .NetFramework\NETFramework\Latihan\bin\Debug\Latihan.exe.config
+D:\Sem 5 .NetFramework\NETFramework\Latihan\bin\Debug\Latihan.exe
+D:\Sem 5 .NetFramework\NETFramework\Latihan\bin\Debug\Latihan.pdb
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.csprojResolveAssemblyReference.cache
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.Form1.resources
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.Properties.Resources.resources
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.csproj.GenerateResource.Cache
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.exe
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.pdb
