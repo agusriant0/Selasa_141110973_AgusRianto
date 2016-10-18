@@ -7,3 +7,4 @@ D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.Properties.Resourc
 D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.csproj.GenerateResource.Cache
 D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.exe
 D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.pdb
+D:\Sem 5 .NetFramework\NETFramework\Latihan\obj\Debug\Latihan.Latihan_2_1.resources
