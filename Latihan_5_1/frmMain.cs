@@ -13,15 +13,17 @@ using System.IO;
 
 namespace Latihan_5_1
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         frmEditor frmEditor;
-        public Form1()
+
+        public frmMain()
         {
             InitializeComponent();
 
             rtbNote.Font = new Font("Consolas", 12.0f);
         }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             Color warna = new Color();
@@ -64,11 +66,13 @@ namespace Latihan_5_1
             edit = false;
             fileExist = "";
         }
+
         private void frmMain_Resize(object sender, EventArgs e)
         {
             rtbNote.Height = this.Height - 105;
             rtbNote.Width = this.Width - 35;
         }
+
         private void tscbColor_DItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index >= 0)
@@ -88,6 +92,7 @@ namespace Latihan_5_1
             }
             e.DrawFocusRectangle();
         }
+
         private void tscbBackColor_DItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index >= 0)
@@ -107,6 +112,7 @@ namespace Latihan_5_1
             }
             e.DrawFocusRectangle();
         }
+
         private void tsbtnBold_Click(object sender, EventArgs e)
         {
             tsbtnBold.Checked = !tsbtnBold.Checked;
@@ -132,6 +138,7 @@ namespace Latihan_5_1
             }
             edit = true;
         }
+
         private void tsbtnItalic_Click(object sender, EventArgs e)
         {
             tsbtnItalic.Checked = !tsbtnItalic.Checked;
@@ -157,6 +164,7 @@ namespace Latihan_5_1
             }
             edit = true;
         }
+
         private void tsbtnUnderline_Click(object sender, EventArgs e)
         {
             tsbtnUnderline.Checked = !tsbtnUnderline.Checked;
@@ -182,6 +190,7 @@ namespace Latihan_5_1
             }
             edit = true;
         }
+
         private void tscbFontSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tscbFontSize.Focused == false)
@@ -190,6 +199,7 @@ namespace Latihan_5_1
             }
             ubahSize();
         }
+
         private void tscbFont_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tscbFont.Focused == false)
@@ -198,6 +208,7 @@ namespace Latihan_5_1
             }
             ubahFont();
         }
+
         private void tscbColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tscbColor.Focused == false)
@@ -206,6 +217,7 @@ namespace Latihan_5_1
             }
             ubahWarna();
         }
+
         private void tscbBackColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tscbBackColor.Focused == false)
@@ -214,6 +226,7 @@ namespace Latihan_5_1
             }
             ubahWarnaLatar();
         }
+
         private void rtbNote_SelectionChanged(object sender, EventArgs e)
         {
             tsbtnBold.Checked = tsbtnItalic.Checked = tsbtnUnderline.Checked = false;
@@ -239,33 +252,36 @@ namespace Latihan_5_1
                 {
                     tsbtnUnderline.Checked = true;
                 }
-                if (rtbNote.SelectionColor.Name == "0")
-                {
-                    tscbColor.Text = "";
-                }
-                else
-                {
-                    tscbColor.Text = rtbNote.SelectionColor.Name;
-                }
+            }
 
-                if (rtbNote.SelectionBackColor.Name == "0")
-                {
-                    tscbBackColor.Text = "";
-                }
-                else if (rtbNote.SelectionBackColor.Name == "Window")
-                {
-                    tscbBackColor.Text = "Transparent";
-                }
-                else
-                {
-                    tscbBackColor.Text = rtbNote.SelectionBackColor.Name;
-                }
+            if (rtbNote.SelectionColor.Name == "0")
+            {
+                tscbColor.Text = "";
+            }
+            else
+            {
+                tscbColor.Text = rtbNote.SelectionColor.Name;
+            }
+
+            if (rtbNote.SelectionBackColor.Name == "0")
+            {
+                tscbBackColor.Text = "";
+            }
+            else if (rtbNote.SelectionBackColor.Name == "Window")
+            {
+                tscbBackColor.Text = "Transparent";
+            }
+            else
+            {
+                tscbBackColor.Text = rtbNote.SelectionBackColor.Name;
             }
         }
-            private void rtbNote_TextChanged(object sender, EventArgs e)
+
+        private void rtbNote_TextChanged(object sender, EventArgs e)
         {
             edit = true;
         }
+
         private void ubahSize()
         {
             try
@@ -295,6 +311,7 @@ namespace Latihan_5_1
                 return;
             }
         }
+
         private void ubahFont()
         {
             int a = rtbNote.SelectionStart;
@@ -324,6 +341,7 @@ namespace Latihan_5_1
                 return;
             }
         }
+
         private void ubahWarna()
         {
             try
@@ -336,6 +354,7 @@ namespace Latihan_5_1
                 return;
             }
         }
+
         private void ubahWarnaLatar()
         {
             try
@@ -348,6 +367,20 @@ namespace Latihan_5_1
                 return;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (edit)
@@ -364,6 +397,7 @@ namespace Latihan_5_1
             }
             Environment.Exit(0);
         }
+
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (changeConf() == "cancel") return;
@@ -372,6 +406,7 @@ namespace Latihan_5_1
             fileExist = "";
             edit = false;
         }
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (changeConf() == "cancel") return;
@@ -397,14 +432,17 @@ namespace Latihan_5_1
                 edit = true;
 
             }
+
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             save();
         }
+
         static string fileExist = "";
         static bool edit = false;
+
         private void save()
         {
             SaveFileDialog simpan = new SaveFileDialog();
@@ -435,6 +473,7 @@ namespace Latihan_5_1
                 MessageBox.Show("Sorry, something went wrong");
             }
         }
+
         private string changeConf()
         {
             if (edit)
@@ -456,6 +495,7 @@ namespace Latihan_5_1
             }
             return "-";
         }
+
         private void rtbNote_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -463,6 +503,7 @@ namespace Latihan_5_1
                 contextMenuStrip1.Show(this, e.X, e.Y);
             }
         }
+
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(rtbNote.SelectedRtf, TextDataFormat.Rtf);
@@ -483,6 +524,7 @@ namespace Latihan_5_1
             Clipboard.SetText(rtbNote.SelectedRtf, TextDataFormat.Rtf);
             rtbNote.SelectedRtf = "";
         }
+
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             if (!Clipboard.ContainsText(TextDataFormat.Rtf))
@@ -506,6 +548,7 @@ namespace Latihan_5_1
                 deleteToolStripMenuItem.Enabled = true;
             }
         }
+
         private void editorToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (frmEditor == null || !frmEditor.IsHandleCreated)
@@ -517,87 +560,51 @@ namespace Latihan_5_1
             }
             frmEditor.Show();
         }
+
+
+
+
         public string rtbBackColor
         {
             get { return rtbNote.BackColor.Name; }
             set { rtbNote.BackColor = Color.FromName(value); }
         }
+
         public void tampilRTB()
         {
             rtbNote.BringToFront();
             rtbNote.Focus();
             rtbNote.SelectionStart = rtbNote.SelectionLength;
         }
+
+        private void tscbFontSize_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (changeConf() == "cancel") return;
 
-            edit = false;
-
-            OpenFileDialog bukaFile = new OpenFileDialog();
-            bukaFile.Filter = "Rich Text Format (*.rtf)|*.rtf";
-
-            DialogResult r = bukaFile.ShowDialog();
-            if (r == DialogResult.OK)
-            {
-                StreamReader rtb = new StreamReader(bukaFile.FileName);
-                rtbNote.Rtf = rtb.ReadToEnd();
-                rtb.Close();
-                fileExist = bukaFile.FileName;
-
-                rtbNote.SelectionStart = rtbNote.TextLength;
-                fileExist = "";
-            }
-            else if (r == DialogResult.Cancel)
-            {
-                edit = true;
-
-            }
-
-        }
-
-        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            save();
-        }
-        
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (edit)
-            {
-                DialogResult result = MessageBox.Show("Do you want to save changes?", "Confirmation", MessageBoxButtons.YesNoCancel);
-                if (result == DialogResult.Yes)
-                {
-                    save();
-                }
-                else if (result == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-            Environment.Exit(0);
-        }
-
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tscbFont_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tscbColor_Click(object sender, EventArgs e)
         {
-            if (frmEditor == null || !frmEditor.IsHandleCreated)
-            {
-                frmEditor = new frmEditor();
-                frmEditor.MdiParent = this;
-                rtbNote.SendToBack();
-                frmEditor.BringToFront();
-            }
-            frmEditor.Show();
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

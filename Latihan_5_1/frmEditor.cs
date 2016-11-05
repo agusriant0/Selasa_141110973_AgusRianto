@@ -14,8 +14,7 @@ namespace Latihan_5_1
 {
     public partial class frmEditor : Form
     {
-        Form1 main = (Form1)Form1.ActiveForm;
-        private object tabControl1;
+        frmMain main = (frmMain)frmMain.ActiveForm;
 
         public frmEditor()
         {
@@ -35,6 +34,7 @@ namespace Latihan_5_1
 
             this.cbBackColor.DrawItem += new DrawItemEventHandler(cbBackColor_DItem);
         }
+
         private void cbBackColor_DItem(object sender, DrawItemEventArgs e)
         {
             if (e.Index >= 0)
@@ -54,6 +54,7 @@ namespace Latihan_5_1
             }
             e.DrawFocusRectangle();
         }
+
         private void frmEditor_Load(object sender, EventArgs e)
         {
             cbBackColor.Text = main.rtbBackColor;
@@ -61,11 +62,15 @@ namespace Latihan_5_1
             treeConfig.ExpandAll();
             treeConfig.SelectedNode = treeConfig.Nodes[0].Nodes[0];
         }
-        private void frmEditor_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            this.Dispose();
-            main.tampilRTB();
+            if (treeConfig.SelectedNode == treeConfig.Nodes[0].Nodes[0])
+            {
+                tabControl1.SelectedIndex = 0;
+            }
         }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             main.rtbBackColor = cbBackColor.Text;
@@ -79,12 +84,25 @@ namespace Latihan_5_1
             main.tampilRTB();
         }
 
-        private void treeConfig_AfterSelect(object sender, TreeViewEventArgs e)
+        private void frmEditor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (treeConfig.SelectedNode == treeConfig.Nodes[0].Nodes[0])
-            {
-                tabControl1 = 0;
-            }
+            this.Dispose();
+            main.tampilRTB();
+        }
+
+        private void lblBackColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbBackColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackColor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("BackColor");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("BackColor");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Theme", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
             this.treeConfig = new System.Windows.Forms.TreeView();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.BackColor = new System.Windows.Forms.TabPage();
             this.lblBackColor = new System.Windows.Forms.Label();
             this.cbBackColor = new System.Windows.Forms.ComboBox();
-            this.tabControl2.SuspendLayout();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
             this.BackColor.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,56 +47,51 @@
             this.treeConfig.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeConfig.Location = new System.Drawing.Point(0, 0);
             this.treeConfig.Name = "treeConfig";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "BackColor";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Theme";
+            treeNode9.Name = "Node1";
+            treeNode9.Text = "BackColor";
+            treeNode10.Name = "Node0";
+            treeNode10.Text = "Theme";
             this.treeConfig.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.treeConfig.Size = new System.Drawing.Size(183, 284);
-            this.treeConfig.TabIndex = 2;
-            this.treeConfig.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeConfig_AfterSelect);
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(12, 226);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            treeNode10});
+            this.treeConfig.Size = new System.Drawing.Size(183, 239);
+            this.treeConfig.TabIndex = 1;
+            this.treeConfig.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(93, 226);
+            this.btnCancel.Location = new System.Drawing.Point(93, 201);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // tabControl2
+            // tabControl1
             // 
-            this.tabControl2.Controls.Add(this.BackColor);
-            this.tabControl2.Location = new System.Drawing.Point(189, -21);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(280, 305);
-            this.tabControl2.TabIndex = 6;
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.BackColor);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(183, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(346, 239);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 5;
             // 
             // BackColor
             // 
             this.BackColor.Controls.Add(this.lblBackColor);
             this.BackColor.Controls.Add(this.cbBackColor);
-            this.BackColor.Location = new System.Drawing.Point(4, 22);
+            this.BackColor.Location = new System.Drawing.Point(4, 5);
             this.BackColor.Name = "BackColor";
             this.BackColor.Padding = new System.Windows.Forms.Padding(3);
-            this.BackColor.Size = new System.Drawing.Size(272, 279);
-            this.BackColor.TabIndex = 1;
+            this.BackColor.Size = new System.Drawing.Size(338, 230);
+            this.BackColor.TabIndex = 0;
             this.BackColor.Text = "BackColor";
             this.BackColor.UseVisualStyleBackColor = true;
+            this.BackColor.Click += new System.EventHandler(this.BackColor_Click);
             // 
             // lblBackColor
             // 
@@ -106,6 +101,7 @@
             this.lblBackColor.Size = new System.Drawing.Size(56, 13);
             this.lblBackColor.TabIndex = 1;
             this.lblBackColor.Text = "BackColor";
+            this.lblBackColor.Click += new System.EventHandler(this.lblBackColor_Click);
             // 
             // cbBackColor
             // 
@@ -117,19 +113,37 @@
             this.cbBackColor.Name = "cbBackColor";
             this.cbBackColor.Size = new System.Drawing.Size(150, 21);
             this.cbBackColor.TabIndex = 0;
+            this.cbBackColor.SelectedIndexChanged += new System.EventHandler(this.cbBackColor_SelectedIndexChanged);
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(12, 201);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 3;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // frmEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 284);
-            this.Controls.Add(this.tabControl2);
+            this.ClientSize = new System.Drawing.Size(529, 239);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.treeConfig);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmEditor";
-            this.Text = "frmEditor";
-            this.tabControl2.ResumeLayout(false);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Editor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditor_FormClosed);
+            this.Load += new System.EventHandler(this.frmEditor_Load);
+            this.tabControl1.ResumeLayout(false);
             this.BackColor.ResumeLayout(false);
             this.BackColor.PerformLayout();
             this.ResumeLayout(false);
@@ -139,11 +153,11 @@
         #endregion
 
         private System.Windows.Forms.TreeView treeConfig;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage BackColor;
         private System.Windows.Forms.Label lblBackColor;
         private System.Windows.Forms.ComboBox cbBackColor;
+        private System.Windows.Forms.Button btnOK;
     }
 }
