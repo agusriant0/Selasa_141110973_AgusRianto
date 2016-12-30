@@ -7,3 +7,6 @@ D:\Sem 5 .NetFramework\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.csproj.Gen
 D:\Sem 5 .NetFramework\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.exe
 D:\Sem 5 .NetFramework\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.pdb
 D:\Sem 5 .NetFramework\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.csprojResolveAssemblyReference.cache
+D:\Sem 5\Framework .NET\NETFramework\Latihan_1_1\bin\Debug\Latihan_1_1.exe.config
+D:\Sem 5\Framework .NET\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.exe
+D:\Sem 5\Framework .NET\NETFramework\Latihan_1_1\obj\Debug\Latihan_1_1.pdb
